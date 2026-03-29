@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Karla } from "next/font/google";
+import { SmoothScroll } from "@/lib/smooth-scroll";
+import { ProgressBar } from "@/components/ui/progress-bar";
+import { SectionDots } from "@/components/ui/section-dots";
+import { FloatingWhatsApp } from "@/components/ui/floating-wa";
 import "./globals.css";
 
 const cormorant = Cormorant_Garamond({
@@ -30,7 +34,12 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${cormorant.variable} ${karla.variable}`}>
       <body className="font-body bg-cream text-body overflow-x-hidden">
-        {children}
+        <SmoothScroll>
+          <ProgressBar />
+          <SectionDots />
+          {children}
+          <FloatingWhatsApp />
+        </SmoothScroll>
       </body>
     </html>
   );
