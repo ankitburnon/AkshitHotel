@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #2D5A47;
+  --color-cream: #FAF6F1;
+  --color-accent: #C2703E;
+  --color-highlight: #A16207;
+  --color-body: #3D3530;
+  --color-dark-bg: #1a3a2e;
+  --color-darkest: #0a1f16;
+  --color-whatsapp: #25D366;
+
+  --font-heading: var(--font-cormorant), serif;
+  --font-body: var(--font-karla), sans-serif;
+
+  --animate-mist-drift: mist-drift 8s ease-in-out infinite;
+  --animate-float: float 3s ease-in-out infinite;
+
+  @keyframes mist-drift {
+    0%, 100% { transform: translateX(-2%); }
+    50% { transform: translateX(2%); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(-8px); }
+  }
+}
+
+/* Linen texture overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg width='4' height='4' viewBox='0 0 4 4' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 3h1v1H1V3zm2-2h1v1H3V1z' fill='%23000000' fill-opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}

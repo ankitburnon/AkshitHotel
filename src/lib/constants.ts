@@ -1,0 +1,52 @@
+export const HOTEL = {
+  name: "Hotel Heaven Paradise",
+  tagline: "A Boutique Retreat in Shimla",
+  location: "Shimla, Himachal Pradesh",
+  // TODO: Replace with actual hotel WhatsApp number and phone before deployment
+  whatsappUrl: "https://wa.me/91XXXXXXXXXX",
+  phoneNumber: "+91-XXXXXXXXXX",
+  distanceFromStation: "15 min from Shimla Railway Station",
+} as const;
+
+export const SECTION_IDS = [
+  "hero",
+  "welcome",
+  "pillars",
+  "rooms",
+  "dining",
+  "experiences",
+  "gallery",
+  "extras",
+  "testimonials",
+  "contact",
+] as const;
+
+export const IMAGES = {
+  hero: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1920&q=80",
+  welcome: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
+  pillarMountain: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=200&q=80",
+  pillarFood: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=200&q=80",
+  pillarHospitality: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=200&q=80",
+  roomValley: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80",
+  roomSuite: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80",
+  roomFamily: "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80",
+  dining: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80",
+  mealBreakfast: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&q=80",
+  mealDinner: "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&q=80",
+  mealChai: "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&q=80",
+  expMallRoad: "https://images.unsplash.com/photo-1597074866923-dc0589150458?w=400&q=80",
+  expJakhu: "https://images.unsplash.com/photo-1585136917228-0b1e78516072?w=400&q=80",
+  expKufri: "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=80",
+  expToyTrain: "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=400&q=80",
+  galleryNight: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
+  galleryMountain: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80",
+  galleryBreakfast: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500&q=80",
+  galleryRoom: "https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=500&q=80",
+  galleryBonfire: "https://images.unsplash.com/photo-1475483768296-6163e8f3a1c2?w=500&q=80",
+  extraBonfire: "https://images.unsplash.com/photo-1475483768296-6163e8f3a1c2?w=200&q=80",
+  extraGames: "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=200&q=80",
+  extraParking: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=200&q=80",
+  ctaBg: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=80",
+  avatarGuest1: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80",
+  avatarGuest2: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
+} as const;
