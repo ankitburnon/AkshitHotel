@@ -1,10 +1,10 @@
-import { HOTEL } from "@/lib/constants";
+import { BRAND } from "@/lib/constants";
 
 const QUICK_LINKS = [
-  { label: "Rooms", href: "#rooms" },
-  { label: "Dining", href: "#dining" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Gallery", href: "#gallery" },
+  { label: "Shimla", href: "/shimla" },
+  { label: "Manali", href: "/manali" },
+  { label: "Our Story", href: "/#welcome" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const SOCIAL_LINKS = [
@@ -19,18 +19,18 @@ export function Footer() {
       <div className="grid md:grid-cols-[2fr_1fr_1fr] gap-12 max-w-[1100px] mx-auto">
         <div>
           <h5 className="font-heading text-xl text-cream/80 mb-4 font-normal">
-            {HOTEL.name}
+            {BRAND.name}
           </h5>
           <p className="text-[13px] leading-8">
-            A boutique retreat in the heart of Shimla.
+            Born in Himachal, rooted in the mountains.
             <br />
-            Family-run, personally hosted, and always warm — even when the
-            mountains are cold.
+            Authentic stays in Shimla and Manali — personally hosted, locally
+            guided, and always unforgettable.
           </p>
         </div>
         <div>
           <h5 className="font-heading text-xl text-cream/80 mb-4 font-normal">
-            Quick Links
+            Explore
           </h5>
           <p className="text-[13px] leading-8">
             {QUICK_LINKS.map((link) => (
@@ -62,7 +62,7 @@ export function Footer() {
         </div>
       </div>
       <div className="max-w-[1100px] mx-auto mt-9 pt-6 border-t border-white/5 text-xs text-center tracking-wider">
-        © {new Date().getFullYear()} {HOTEL.name} · {HOTEL.location}
+        © {new Date().getFullYear()} {BRAND.name} · Himachal Pradesh, India
       </div>
     </footer>
   );
