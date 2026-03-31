@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Karla } from "next/font/google";
 import { SmoothScroll } from "@/lib/smooth-scroll";
 import { ProgressBar } from "@/components/ui/progress-bar";
-import { SectionDots } from "@/components/ui/section-dots";
 import { FloatingWhatsApp } from "@/components/ui/floating-wa";
 import "./globals.css";
 
@@ -21,9 +20,9 @@ const karla = Karla({
 });
 
 export const metadata: Metadata = {
-  title: "Hotel Heaven Paradise — Boutique Retreat in Shimla",
+  title: "Heaven Paradise — Hospitality in the Himalayas",
   description:
-    "A family-run boutique hotel in Shimla with panoramic Himalayan views, home-cooked cuisine, and personal hospitality. Book via WhatsApp.",
+    "Born in Himachal, Heaven Paradise offers authentic mountain stays in Shimla and Manali. Personally hosted. Locally rooted. Unforgettable.",
 };
 
 export default function RootLayout({
@@ -36,7 +35,6 @@ export default function RootLayout({
       <body className="font-body bg-cream text-body overflow-x-hidden">
         <SmoothScroll>
           <ProgressBar />
-          <SectionDots />
           {children}
           <FloatingWhatsApp />
         </SmoothScroll>
