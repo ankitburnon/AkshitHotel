@@ -1,37 +1,19 @@
 import Image from "next/image";
-import { IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
-const ROOMS = [
-  {
-    name: "Valley View Room",
-    description:
-      "A cozy room with a private balcony overlooking the lush green valley. Perfect for couples seeking peace.",
-    image: IMAGES.roomValley,
-    tags: ["Valley View", "Balcony", "Heater", "Hot Water"],
-  },
-  {
-    name: "Mountain Suite",
-    description:
-      "Panoramic views, sitting area, and a cozy reading corner.",
-    image: IMAGES.roomSuite,
-    tags: ["Panoramic", "Suite", "Window Seat"],
-  },
-  {
-    name: "Family Room",
-    description:
-      "Extra space for families with little ones. Views the kids will remember.",
-    image: IMAGES.roomFamily,
-    tags: ["Family", "Extra Beds", "Spacious"],
-  },
-];
+interface Room {
+  name: string;
+  description: string;
+  image: string;
+  tags: string[];
+}
 
 function RoomCard({
   room,
   height,
   className = "",
 }: {
-  room: (typeof ROOMS)[number];
+  room: Room;
   height: string;
   className?: string;
 }) {
@@ -69,7 +51,7 @@ function RoomCard({
   );
 }
 
-export function Rooms() {
+export function Rooms({ rooms }: { rooms: Room[] }) {
   return (
     <section
       id="rooms"
@@ -91,15 +73,14 @@ export function Rooms() {
 
       <div className="grid md:grid-cols-[7fr_5fr] gap-6 max-w-[1100px] mx-auto w-full">
         <ScrollReveal>
-          <RoomCard room={ROOMS[0]} height="h-[520px]" />
+          <RoomCard room={rooms[0]} height="h-[520px]" />
         </ScrollReveal>
         <div className="flex flex-col gap-6">
-          <ScrollReveal delay={0.2}>
-            <RoomCard room={ROOMS[1]} height="h-[248px]" />
-          </ScrollReveal>
-          <ScrollReveal delay={0.35}>
-            <RoomCard room={ROOMS[2]} height="h-[248px]" />
-          </ScrollReveal>
+          {rooms.slice(1).map((room, i) => (
+            <ScrollReveal key={room.name} delay={(i + 1) * 0.15}>
+              <RoomCard room={room} height="h-[248px]" />
+            </ScrollReveal>
+          ))}
         </div>
       </div>
     </section>

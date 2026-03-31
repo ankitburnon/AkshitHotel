@@ -1,16 +1,12 @@
 import Image from "next/image";
-import { IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
-const GALLERY_ITEMS = [
-  { src: IMAGES.galleryNight, alt: "Hotel Heaven Paradise at night" },
-  { src: IMAGES.galleryMountain, alt: "Mountain view from the hotel" },
-  { src: IMAGES.galleryBreakfast, alt: "Breakfast at the hotel" },
-  { src: IMAGES.galleryRoom, alt: "Room interior" },
-  { src: IMAGES.galleryBonfire, alt: "Evening bonfire" },
-];
+interface GalleryItem {
+  src: string;
+  alt: string;
+}
 
-export function Gallery() {
+export function Gallery({ items, propertyName }: { items: GalleryItem[]; propertyName: string }) {
   return (
     <section
       id="gallery"
@@ -26,12 +22,12 @@ export function Gallery() {
       </SplitHeading>
       <ScrollReveal>
         <p className="text-base text-[#999] max-w-[480px] leading-[1.8] mb-14 font-light">
-          Real moments from Hotel Heaven Paradise
+          Real moments from {propertyName}
         </p>
       </ScrollReveal>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[3fr_2fr_2fr] md:grid-rows-[220px_220px] gap-3 max-w-[1100px] mx-auto w-full">
-        {GALLERY_ITEMS.map((item, i) => (
+        {items.map((item, i) => (
           <ScrollReveal
             key={item.alt}
             delay={i * 0.1}

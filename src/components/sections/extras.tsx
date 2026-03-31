@@ -1,29 +1,13 @@
 import Image from "next/image";
-import { IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
-const EXTRAS = [
-  {
-    image: IMAGES.extraBonfire,
-    title: "Evening Bonfire",
-    description:
-      "Gather around the fire under the stars. Perfect for families and couples on cold mountain evenings.",
-  },
-  {
-    image: IMAGES.extraGames,
-    title: "Games & Books",
-    description:
-      "Board games, cards, and a small library. Some evenings are best spent offline.",
-  },
-  {
-    image: IMAGES.extraParking,
-    title: "Free Parking",
-    description:
-      "Safe, on-site parking for your car. One less thing to worry about on your trip.",
-  },
-];
+interface Extra {
+  image: string;
+  title: string;
+  description: string;
+}
 
-export function Extras() {
+export function Extras({ extras }: { extras: Extra[] }) {
   return (
     <section
       id="extras"
@@ -44,7 +28,7 @@ export function Extras() {
       </ScrollReveal>
 
       <div className="grid md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
-        {EXTRAS.map((extra, i) => (
+        {extras.map((extra, i) => (
           <ScrollReveal key={extra.title} delay={i * 0.15}>
             <div className="bg-white/4 border border-white/8 rounded-xl p-10 px-7 text-center hover:translate-y-[-6px] hover:bg-white/8 transition-all duration-500">
               <div className="w-[72px] h-[72px] rounded-full mx-auto mb-6 overflow-hidden">

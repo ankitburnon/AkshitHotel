@@ -2,20 +2,25 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
-const MEALS = [
-  { image: IMAGES.mealBreakfast, label: "Breakfast" },
-  { image: IMAGES.mealDinner, label: "Dinner" },
-  { image: IMAGES.mealChai, label: "Chai Time" },
-];
+interface Meal {
+  image: string;
+  label: string;
+}
 
-export function Dining() {
+interface DiningProps {
+  image: string;
+  imageAlt: string;
+  title: string;
+  paragraphs: string[];
+  meals: Meal[];
+}
+
+export function Dining({ image, imageAlt, title, paragraphs, meals }: DiningProps) {
   return (
     <section id="dining" className="py-16 md:py-[120px] px-8 md:px-[60px] bg-cream">
       <div className="grid md:grid-cols-2 gap-12 md:gap-20 max-w-[1100px] mx-auto items-center">
-        {/* Image with clip-path reveal */}
         <motion.div
           className="relative w-full h-[300px] md:h-[450px] rounded-xl overflow-hidden shadow-[0_30px_80px_rgba(194,112,62,0.15)]"
           initial={{ clipPath: "inset(15% 10% 15% 10% round 12px)" }}
@@ -31,8 +36,8 @@ export function Dining() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
             <Image
-              src={IMAGES.dining}
-              alt="Dining at Hotel Heaven Paradise"
+              src={image}
+              alt={imageAlt}
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
@@ -40,7 +45,6 @@ export function Dining() {
           </motion.div>
         </motion.div>
 
-        {/* Text */}
         <div>
           <ScrollReveal>
             <p className="text-[11px] tracking-[4px] uppercase text-accent font-semibold mb-4">
@@ -51,24 +55,18 @@ export function Dining() {
             as="h3"
             className="font-heading text-[40px] text-primary mb-5 font-light leading-[1.2]"
           >
-            From Our Kitchen to Your Table
+            {title}
           </SplitHeading>
-          <ScrollReveal delay={0.2}>
-            <p className="text-base text-[#777] leading-[1.9] mb-4 font-light">
-              No buffet lines, no reheated food. Every meal is cooked fresh —
-              just like home. Wake up to hot parathas and chai, end your day with
-              a hearty Himachali dinner.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.3}>
-            <p className="text-base text-[#777] leading-[1.9] mb-8 font-light">
-              Our specialties include siddu, madra, babru, and the best dal
-              you&apos;ve had in the mountains.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={0.4}>
-            <div className="flex gap-5">
-              {MEALS.map((meal) => (
+          {paragraphs.map((text, i) => (
+            <ScrollReveal key={i} delay={0.2 + i * 0.1}>
+              <p className="text-base text-[#777] leading-[1.9] mb-4 font-light">
+                {text}
+              </p>
+            </ScrollReveal>
+          ))}
+          <ScrollReveal delay={0.2 + paragraphs.length * 0.1}>
+            <div className="flex gap-5 mt-4">
+              {meals.map((meal) => (
                 <div key={meal.label} className="text-center flex-1">
                   <div className="w-16 h-16 rounded-full mx-auto mb-2.5 overflow-hidden">
                     <Image

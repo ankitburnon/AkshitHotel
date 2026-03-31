@@ -1,15 +1,13 @@
 import Image from "next/image";
-import { IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
-const EXPERIENCES = [
-  { name: "Mall Road", subtitle: "Heritage walk through Shimla's heart", image: IMAGES.expMallRoad },
-  { name: "Jakhu Temple", subtitle: "Morning hike to the hilltop", image: IMAGES.expJakhu },
-  { name: "Kufri", subtitle: "Snow & adventure nearby", image: IMAGES.expKufri },
-  { name: "Toy Train", subtitle: "UNESCO heritage railway", image: IMAGES.expToyTrain },
-];
+interface Experience {
+  name: string;
+  subtitle: string;
+  image: string;
+}
 
-export function Experiences() {
+export function Experiences({ experiences, locationName }: { experiences: Experience[]; locationName: string }) {
   return (
     <section
       id="experiences"
@@ -21,7 +19,7 @@ export function Experiences() {
         </p>
       </ScrollReveal>
       <SplitHeading className="font-heading text-[48px] font-light text-primary mb-4 leading-[1.15]">
-        Discover Shimla
+        Discover {locationName}
       </SplitHeading>
       <ScrollReveal>
         <p className="text-base text-[#999] max-w-[480px] leading-[1.8] mb-14 font-light">
@@ -30,7 +28,7 @@ export function Experiences() {
       </ScrollReveal>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-[1100px] mx-auto w-full">
-        {EXPERIENCES.map((exp, i) => (
+        {experiences.map((exp, i) => (
           <ScrollReveal key={exp.name} delay={i * 0.12}>
             <div className="rounded-xl overflow-hidden relative h-[280px] md:h-[340px] cursor-pointer group hover:translate-y-[-6px] transition-all duration-500">
               <Image
