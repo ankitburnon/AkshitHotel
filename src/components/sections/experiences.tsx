@@ -19,7 +19,7 @@ export function Experiences({ experiences, locationName }: { experiences: Experi
         </p>
       </ScrollReveal>
       <SplitHeading className="font-heading text-[48px] font-light text-primary mb-4 leading-[1.15]">
-        Discover {locationName}
+        {`Discover ${locationName}`}
       </SplitHeading>
       <ScrollReveal>
         <p className="text-base text-[#999] max-w-[480px] leading-[1.8] mb-14 font-light">
