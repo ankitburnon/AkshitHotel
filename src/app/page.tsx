@@ -1,39 +1,45 @@
 import { Navbar } from "@/components/ui/navbar";
+import { SectionDots } from "@/components/ui/section-dots";
 import { Hero } from "@/components/sections/hero";
-import { BRAND, BRAND_IMAGES } from "@/lib/constants";
 import { Welcome } from "@/components/sections/welcome";
 import { Pillars } from "@/components/sections/pillars";
-import { Rooms } from "@/components/sections/rooms";
-import { Dining } from "@/components/sections/dining";
-import { Experiences } from "@/components/sections/experiences";
-import { Gallery } from "@/components/sections/gallery";
-import { Extras } from "@/components/sections/extras";
+import { Properties } from "@/components/sections/properties";
 import { Testimonials } from "@/components/sections/testimonials";
 import { ContactCTA } from "@/components/sections/contact-cta";
 import { Footer } from "@/components/sections/footer";
+import { BRAND, BRAND_IMAGES, HOMEPAGE_SECTION_IDS } from "@/lib/constants";
+
+const NAV_LINKS = [
+  { label: "Our Story", href: "#welcome" },
+  { label: "Shimla", href: "/shimla" },
+  { label: "Manali", href: "/manali" },
+  { label: "Reviews", href: "#testimonials" },
+];
 
 export default function Home() {
   return (
     <main>
-      <Navbar />
+      <Navbar links={NAV_LINKS} />
+      <SectionDots sectionIds={HOMEPAGE_SECTION_IDS} />
       <Hero
-          image={BRAND_IMAGES.hero}
-          imageAlt="Himalayan mountains — Heaven Paradise"
-          preheading={BRAND.tagline}
-          heading="Experience Himachal the Way a Local Would"
-          subtext="Handpicked stays · Insider itineraries · End-to-end care"
-          ctaText="Explore Our Properties"
-          ctaHref="#properties"
-        />
+        image={BRAND_IMAGES.hero}
+        imageAlt="Himalayan mountains in Himachal Pradesh"
+        preheading={BRAND.tagline}
+        heading="Heaven Paradise"
+        subtext="Born in the heart of Himachal, we don't just offer stays — we offer the mountains the way only a local can. Hidden trails. Home-cooked meals. Moments you won't find in any guidebook."
+        ctaText="Explore Our Properties"
+        ctaHref="#properties"
+      />
       <Welcome />
       <Pillars />
-      <Rooms />
-      <Dining />
-      <Experiences />
-      <Gallery />
-      <Extras />
+      <Properties />
       <Testimonials />
-      <ContactCTA />
+      <ContactCTA
+        heading="Your mountains are waiting"
+        subtext="Let us plan your perfect Himachal escape. Tell us when you're coming, and we'll take care of everything else."
+        whatsappUrl={BRAND.whatsappUrl}
+        phoneNumber={BRAND.phoneNumber}
+      />
       <Footer />
     </main>
   );
