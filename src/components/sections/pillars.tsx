@@ -1,25 +1,25 @@
 import Image from "next/image";
-import { IMAGES } from "@/lib/constants";
+import { BRAND_IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
 const PILLARS = [
   {
-    image: IMAGES.pillarMountain,
-    title: "Mountain Views",
+    image: BRAND_IMAGES.pillarMountain,
+    title: "Rooted in the Mountains",
     description:
-      "Wake up to panoramic Himalayan vistas from every room. Tea on the balcony hits different.",
+      "We're not a hotel chain that picked a pretty location on a map. We were born here. Every recommendation, every trail, every meal comes from a lifetime of calling these mountains home.",
   },
   {
-    image: IMAGES.pillarFood,
-    title: "Home-Cooked Meals",
+    image: BRAND_IMAGES.pillarJourney,
+    title: "Your Journey, Your Way",
     description:
-      "Authentic Himachali and North Indian cuisine, made fresh daily with local ingredients.",
+      "Cookie-cutter itineraries aren't our thing. Tell us what you're looking for — adventure, peace, culture, or all three — and we'll craft an experience around you.",
   },
   {
-    image: IMAGES.pillarHospitality,
-    title: "Personal Hospitality",
+    image: BRAND_IMAGES.pillarService,
+    title: "End-to-End, No Loose Ends",
     description:
-      "We know our guests by name, not room number. Your comfort is our family's priority.",
+      "From the moment you step onto the property to the moment you leave, we handle everything. Transfers, meals, day plans, local experiences — just show up.",
   },
 ];
 
@@ -31,15 +31,15 @@ export function Pillars() {
     >
       <ScrollReveal>
         <p className="text-[11px] tracking-[4px] uppercase text-accent font-semibold mb-4">
-          Why Choose Us
+          Our Promise
         </p>
       </ScrollReveal>
       <SplitHeading className="font-heading text-[48px] font-light text-primary mb-4 leading-[1.15]">
-        Three Things We Promise
+        What Sets Us Apart
       </SplitHeading>
       <ScrollReveal>
         <p className="text-base text-[#999] max-w-[480px] leading-[1.8] mb-14 font-light">
-          Simple values that make every stay special
+          Three pillars that define every Heaven Paradise experience
         </p>
       </ScrollReveal>
 
