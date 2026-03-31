@@ -1,12 +1,12 @@
 "use client";
 
 import { MessageCircle } from "lucide-react";
-import { HOTEL } from "@/lib/constants";
+import { BRAND } from "@/lib/constants";
 
 export function FloatingWhatsApp() {
   return (
     <a
-      href={HOTEL.whatsappUrl}
+      href={BRAND.whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
