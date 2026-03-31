@@ -2,17 +2,18 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
-import { HOTEL } from "@/lib/constants";
+import { BRAND } from "@/lib/constants";
 
-const NAV_LINKS = [
-  { label: "About", href: "#welcome" },
-  { label: "Rooms", href: "#rooms" },
-  { label: "Dining", href: "#dining" },
-  { label: "Experiences", href: "#experiences" },
-  { label: "Gallery", href: "#gallery" },
-];
+interface NavLink {
+  label: string;
+  href: string;
+}
 
-export function Navbar() {
+export function Navbar({ links, ctaLabel = "WhatsApp Us", ctaHref = "#contact" }: {
+  links: NavLink[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -34,19 +35,19 @@ export function Navbar() {
         }`}
       >
         <a
-          href="#hero"
+          href="/"
           className={`font-heading tracking-wide transition-all duration-600 ${
             scrolled
               ? "text-primary text-[22px] font-light"
               : "text-white text-[26px] font-light"
           }`}
         >
-          {HOTEL.name}
+          {BRAND.name}
         </a>
 
         {/* Desktop links */}
         <div className="hidden md:flex gap-8">
-          {NAV_LINKS.map((link) => (
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -61,14 +62,14 @@ export function Navbar() {
 
         {/* Desktop CTA */}
         <a
-          href="#contact"
+          href={ctaHref}
           className={`hidden md:block text-[13px] font-semibold tracking-wide rounded-md transition-all duration-400 px-6 py-2.5 ${
             scrolled
               ? "bg-primary text-white border border-primary"
               : "bg-transparent text-white border border-white/40 hover:bg-white/15"
           }`}
         >
-          WhatsApp Us
+          {ctaLabel}
         </a>
 
         {/* Mobile menu button */}
@@ -90,7 +91,7 @@ export function Navbar() {
       {/* Mobile drawer */}
       {mobileOpen && (
         <div className="fixed inset-0 z-[999] bg-cream flex flex-col items-center justify-center gap-8">
-          {NAV_LINKS.map((link) => (
+          {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -101,11 +102,11 @@ export function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href={ctaHref}
             onClick={() => setMobileOpen(false)}
             className="mt-4 px-8 py-3 bg-primary text-white rounded-md font-semibold"
           >
-            WhatsApp Us
+            {ctaLabel}
           </a>
         </div>
       )}
