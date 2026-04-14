@@ -77,7 +77,7 @@ export function Hero({
         <p className="text-[15px] opacity-70 mb-10 tracking-wide font-light">
           {subtext}
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
+        <div className="flex flex-col sm:flex-row gap-3 justify-center mb-4">
           <a
             href={ctaHref}
             className="inline-block w-full sm:w-auto px-11 py-4 bg-accent text-white rounded-[4px] text-[13px] font-semibold tracking-[1.5px] uppercase shadow-[0_4px_30px_rgba(194,112,62,0.4)] hover:translate-y-[-2px] hover:shadow-[0_8px_40px_rgba(194,112,62,0.5)] transition-all duration-400 relative overflow-hidden group text-center"
@@ -88,6 +88,8 @@ export function Hero({
           {ctaText2 && ctaHref2 && (
             <a
               href={ctaHref2}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block w-full sm:w-auto px-11 py-4 bg-transparent text-white border border-white/40 rounded-[4px] text-[13px] font-semibold tracking-[1.5px] uppercase hover:bg-white/10 hover:translate-y-[-2px] transition-all duration-400 text-center"
             >
               {ctaText2}
