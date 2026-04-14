@@ -46,7 +46,7 @@ export function Pillars() {
       <div className="grid md:grid-cols-3 gap-8 max-w-[1000px] mx-auto">
         {PILLARS.map((pillar, i) => (
           <ScrollReveal key={pillar.title} delay={i * 0.15}>
-            <div className="bg-white rounded-xl p-11 px-8 text-center border border-primary/8 hover:translate-y-[-8px] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500">
+            <div className="bg-white rounded-xl p-11 px-8 text-center border border-primary/8 hover:translate-y-[-8px] hover:shadow-[0_20px_60px_rgba(0,0,0,0.06)] transition-all duration-500 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-accent after:w-0 hover:after:w-full after:transition-all after:duration-400">
               <div className="w-20 h-20 rounded-full mx-auto mb-6 overflow-hidden">
                 <Image
                   src={pillar.image}
