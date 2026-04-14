@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";
 
 interface Extra {
@@ -29,8 +30,18 @@ export function Extras({ extras }: { extras: Extra[] }) {
 
       <div className="grid md:grid-cols-3 gap-6 max-w-[1000px] mx-auto">
         {extras.map((extra, i) => (
-          <ScrollReveal key={extra.title} delay={i * 0.15}>
-            <div className="bg-white/4 border border-white/8 rounded-xl p-10 px-7 text-center hover:translate-y-[-6px] hover:bg-white/8 transition-all duration-500">
+          <motion.div
+            key={extra.title}
+            initial={{ x: -40, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true, margin: "-15%" }}
+            transition={{
+              duration: 0.7,
+              delay: i * 0.15,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+          >
+            <div className="bg-white/4 border border-white/8 rounded-xl p-10 px-7 text-center hover:translate-y-[-6px] hover:bg-white/8 transition-all duration-500 relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:h-[2px] after:bg-accent after:w-0 hover:after:w-full after:transition-all after:duration-400">
               <div className="w-[72px] h-[72px] rounded-full mx-auto mb-6 overflow-hidden">
                 <Image
                   src={extra.image}
@@ -47,7 +58,7 @@ export function Extras({ extras }: { extras: Extra[] }) {
                 {extra.description}
               </p>
             </div>
-          </ScrollReveal>
+          </motion.div>
         ))}
       </div>
     </section>
