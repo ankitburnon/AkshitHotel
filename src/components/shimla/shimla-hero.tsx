@@ -3,7 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+import { PROPERTIES } from "@/lib/constants";
+
 const ease = [0.16, 1, 0.3, 1] as const;
+
+const property = PROPERTIES.shimla;
 
 export function ShimlaHero() {
   return (
@@ -43,15 +47,28 @@ export function ShimlaHero() {
               most beautiful place on earth.
             </motion.p>
 
-            <motion.a
-              href="#rooms"
-              className="inline-block px-10 py-4 bg-accent text-white text-[12px] tracking-[2px] uppercase font-semibold hover:translate-y-[-2px] hover:shadow-[0_8px_30px_rgba(194,112,62,0.3)] transition-all duration-400 cursor-pointer whitespace-nowrap"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease, delay: 0.45 }}
-            >
-              See the Rooms
-            </motion.a>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <motion.a
+                href="#rooms"
+                className="inline-block px-10 py-4 bg-accent text-white text-[12px] tracking-[2px] uppercase font-semibold hover:translate-y-[-2px] hover:shadow-[0_8px_30px_rgba(194,112,62,0.3)] transition-all duration-400 cursor-pointer whitespace-nowrap text-center"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease, delay: 0.45 }}
+              >
+                See the Rooms
+              </motion.a>
+              <motion.a
+                href={`${property.whatsappUrl}?text=${encodeURIComponent("Hi, I'd like to book a stay at Hotel Heaven Paradise, Shimla. Can you help me?")}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-10 py-4 bg-[#25D366] text-white text-[12px] tracking-[2px] uppercase font-semibold hover:translate-y-[-2px] hover:shadow-[0_8px_30px_rgba(37,211,102,0.3)] transition-all duration-400 cursor-pointer whitespace-nowrap text-center"
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease, delay: 0.55 }}
+              >
+                WhatsApp to Book
+              </motion.a>
+            </div>
           </div>
         </div>
       </div>
