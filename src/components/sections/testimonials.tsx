@@ -17,6 +17,20 @@ const REVIEWS = [
     author: "Sneha M.",
     location: "Mumbai",
   },
+  {
+    avatar: BRAND_IMAGES.avatarGuest3,
+    quote:
+      "Our second trip to Heaven Paradise — we don't travel to Shimla for the destination anymore, we travel for Akshit's hospitality. Every detail was thought through. The kids loved it as much as we did.",
+    author: "The Mehta Family",
+    location: "Pune",
+  },
+  {
+    avatar: BRAND_IMAGES.avatarGuest4,
+    quote:
+      "I was skeptical at first — a small boutique hotel over a big resort? But the valley view at breakfast, the personal touch, the hidden trek Akshit showed us... I haven't booked a chain hotel since.",
+    author: "Vikram S.",
+    location: "Bengaluru",
+  },
 ];
 
 export function Testimonials() {
@@ -39,32 +53,54 @@ export function Testimonials() {
         </p>
       </ScrollReveal>
 
-      <div className="grid md:grid-cols-2 gap-7 max-w-[900px] mx-auto">
+      {/* Reviews: horizontal scroll on mobile, 2-col grid on desktop */}
+      <div className="flex md:grid md:grid-cols-2 gap-7 max-w-[900px] mx-auto overflow-x-auto md:overflow-visible snap-x snap-mandatory [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden w-full -mx-8 md:mx-auto px-8 md:px-0">
         {REVIEWS.map((review, i) => (
-          <ScrollReveal key={review.author} delay={i * 0.15}>
-            <div className="bg-white border border-primary/6 rounded-xl p-9 text-left">
-              <div className="w-10 h-10 rounded-full overflow-hidden mb-4">
-                <Image
-                  src={review.avatar}
-                  alt={review.author}
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-cover"
-                />
+          <div
+            key={review.author}
+            className="flex-none w-[85vw] md:w-auto snap-start"
+          >
+            <ScrollReveal delay={i * 0.15}>
+              <div className="bg-white border border-primary/6 rounded-xl p-9 text-left h-full">
+                <div className="w-10 h-10 rounded-full overflow-hidden mb-4">
+                  <Image
+                    src={review.avatar}
+                    alt={review.author}
+                    width={100}
+                    height={100}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="text-highlight text-[13px] tracking-[2px] mb-4">
+                  ★ ★ ★ ★ ★
+                </div>
+                <blockquote className="font-heading text-lg text-[#555] leading-[1.7] italic font-light mb-5">
+                  &ldquo;{review.quote}&rdquo;
+                </blockquote>
+                <p className="text-xs text-highlight font-semibold tracking-wider uppercase">
+                  {review.author} · {review.location}
+                </p>
               </div>
-              <div className="text-highlight text-[13px] tracking-[2px] mb-4">
-                ★ ★ ★ ★ ★
-              </div>
-              <blockquote className="font-heading text-lg text-[#555] leading-[1.7] italic font-light mb-5">
-                &ldquo;{review.quote}&rdquo;
-              </blockquote>
-              <p className="text-xs text-highlight font-semibold tracking-wider uppercase">
-                {review.author} · {review.location}
-              </p>
-            </div>
-          </ScrollReveal>
+            </ScrollReveal>
+          </div>
         ))}
       </div>
+
+      <ScrollReveal>
+        <div className="mt-10">
+          <a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2.5 text-sm text-[#aaa] hover:text-accent transition-colors duration-300 group"
+          >
+            <span className="text-highlight text-base">★★★★★</span>
+            <span className="font-semibold text-body">4.9</span>
+            <span>on Google Reviews</span>
+            <span className="text-accent group-hover:translate-x-1 transition-transform duration-200">→</span>
+          </a>
+        </div>
+      </ScrollReveal>
     </section>
   );
 }
