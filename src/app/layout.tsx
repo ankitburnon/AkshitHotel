@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Karla } from "next/font/google";
 import { SmoothScroll } from "@/lib/smooth-scroll";
 import { ProgressBar } from "@/components/ui/progress-bar";
+import { MobileBookingBar } from "@/components/ui/mobile-booking-bar";
 import { FloatingWhatsApp } from "@/components/ui/floating-wa";
 import "./globals.css";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
         <SmoothScroll>
           <ProgressBar />
           {children}
+          <MobileBookingBar />
           <FloatingWhatsApp />
         </SmoothScroll>
       </body>
