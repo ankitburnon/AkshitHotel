@@ -27,8 +27,11 @@ export default function Home() {
         preheading={BRAND.tagline}
         heading="Heaven Paradise"
         subtext="Born in the heart of Himachal, we don't just offer stays — we offer the mountains the way only a local can. Hidden trails. Home-cooked meals. Moments you won't find in any guidebook."
-        ctaText="Explore Our Properties"
-        ctaHref="#properties"
+        ctaText="Explore Shimla"
+        ctaHref="/shimla"
+        ctaText2="Explore Manali"
+        ctaHref2="/manali"
+        trustSignals={["500+ Guests Hosted", "4.9★ Google Rating", "Shimla & Manali"]}
       />
       <Welcome />
       <Pillars />

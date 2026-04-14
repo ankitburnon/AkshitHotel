@@ -39,6 +39,8 @@ export default function ManaliPage() {
         subtext={property.tagline}
         ctaText="View Rooms"
         ctaHref="#rooms"
+        ctaText2="WhatsApp to Book"
+        ctaHref2={`${property.whatsappUrl}?text=${encodeURIComponent("Hi, I'd like to book a stay at Hotel DK Residency, Manali. Can you help me?")}`}
       />
 
       {/* About section */}
