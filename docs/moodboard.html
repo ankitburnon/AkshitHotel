@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heaven Paradise — Design Moodboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --deep-forest: #0d1a14;
+      --mountain-green: #2D5A47;
+      --terracotta: #c2703e;
+      --warm-ivory: #FAF6F1;
+      --charcoal: #1A1A18;
+      --border: rgba(255,255,255,0.06);
+      --text-muted: #777;
+      --text-dim: #555;
+    }
+
+    body {
+      font-family: 'Karla', sans-serif;
+      background: #0a0a0a;
+      color: #e8e0d6;
+      line-height: 1.7;
+    }
+
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+    /* ─── Header ─── */
+    .moodboard-header {
+      padding: 80px 60px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .label {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 16px;
+      font-weight: 600;
+    }
+    .moodboard-header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 56px;
+      font-weight: 300;
+      color: var(--warm-ivory);
+      line-height: 1.1;
+      margin-bottom: 12px;
+    }
+    .moodboard-header .subtitle {
+      font-size: 15px;
+      color: #888;
+      font-weight: 300;
+      max-width: 600px;
+    }
+
+    /* ─── Section ─── */
+    .section {
+      padding: 80px 60px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 32px;
+      font-weight: 300;
+      color: var(--warm-ivory);
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 14px;
+      color: #888;
+      font-weight: 300;
+      max-width: 560px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    /* ─── Hero Image (full bleed) ─── */
+    .hero-image-section {
+      position: relative;
+      height: 85vh;
+      overflow: hidden;
+    }
+    .hero-image-section img {
+      position: absolute;
+      inset: 0;
+    }
+    .hero-image-section .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%, rgba(0,0,0,0.3) 100%);
+    }
+    .hero-image-section .content {
+      position: absolute;
+      bottom: 80px;
+      left: 60px;
+      z-index: 2;
+    }
+    .hero-image-section .content .tag {
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .hero-image-section .content h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 48px;
+      font-weight: 300;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .hero-image-section .content p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.6);
+      font-weight: 300;
+    }
+    .hero-badge {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      background: var(--terracotta);
+      color: white;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 4px;
+      z-index: 3;
+    }
+
+    /* ─── Image Grid ─── */
+    .image-grid {
+      display: grid;
+      gap: 16px;
+    }
+    .image-grid.cols-3 { grid-template-columns: 1fr 1fr 1fr; }
+    .image-grid.cols-2 { grid-template-columns: 1fr 1fr; }
+    .image-grid.asymmetric { grid-template-columns: 55% 1fr; }
+    .image-grid.hero-grid {
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 280px 280px;
+    }
+
+    .image-card {
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background: #111;
+    }
+    .image-card.h-280 { height: 280px; }
+    .image-card.h-320 { height: 320px; }
+    .image-card.h-400 { height: 400px; }
+    .image-card.h-500 { height: 500px; }
+    .image-card.span-rows { grid-row: span 2; }
+    .image-card.no-radius { border-radius: 0; }
+
+    .image-card .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px;
+      background: linear-gradient(to top, rgba(0,0,0,0.65), transparent);
+    }
+    .image-card .caption h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 4px;
+    }
+    .image-card .caption span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.55);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    .image-card .badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: white;
+      background: rgba(0,0,0,0.45);
+      backdrop-filter: blur(12px);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+
+    /* ─── Color Palette ─── */
+    .palette-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+    .color-card {
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .color-swatch { height: 120px; }
+    .color-info {
+      padding: 14px;
+      background: rgba(255,255,255,0.03);
+    }
+    .color-info .name { font-size: 13px; font-weight: 500; color: var(--warm-ivory); margin-bottom: 2px; }
+    .color-info .hex { font-size: 11px; color: #555; font-family: monospace; }
+    .color-info .usage { font-size: 11px; color: #444; margin-top: 4px; font-weight: 300; }
+
+    .palette-combos {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    .combo-card {
+      border-radius: 10px;
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    .combo-card h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 26px;
+      font-weight: 300;
+      margin-bottom: 6px;
+    }
+    .combo-card p {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ─── Typography ─── */
+    .type-showcase {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .type-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 40px 32px;
+    }
+    .type-block .font-label { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 16px; font-weight: 600; }
+    .type-block .font-name { font-size: 13px; color: #555; margin-bottom: 20px; }
+    .type-row { display: flex; align-items: baseline; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid rgba(255,255,255,0.04); margin-bottom: 14px; }
+    .type-row:last-child { border-bottom: none; margin-bottom: 0; }
+    .type-row .size { font-size: 10px; color: #444; font-family: monospace; min-width: 70px; }
+    .type-row .sample-heading { font-family: 'Cormorant Garamond', serif; color: var(--warm-ivory); font-weight: 300; }
+    .type-row .sample-body { font-family: 'Karla', sans-serif; color: #bbb; }
+
+    /* ─── Direction Cards ─── */
+    .direction-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .direction-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 36px 28px;
+    }
+    .direction-card .icon { font-size: 24px; margin-bottom: 16px; display: block; }
+    .direction-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 400; color: var(--warm-ivory); margin-bottom: 10px; }
+    .direction-card p { font-size: 13px; color: #777; font-weight: 300; line-height: 1.8; }
+
+    /* ─── Layout Wireframes ─── */
+    .layout-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .layout-card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .layout-visual { height: 180px; position: relative; border-bottom: 1px solid var(--border); }
+    .layout-info { padding: 24px 20px; }
+    .layout-info h4 { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 400; color: var(--warm-ivory); margin-bottom: 6px; }
+    .layout-info p { font-size: 12px; color: #666; font-weight: 300; line-height: 1.7; }
+
+    .wf-hero { background: linear-gradient(135deg, #1a3a2e, #0d2a20); display: flex; align-items: flex-end; padding: 20px; }
+    .wf-hero .content { width: 45%; }
+    .bar { height: 4px; background: rgba(255,255,255,0.15); border-radius: 2px; margin-bottom: 8px; }
+    .bar.accent { background: var(--terracotta); width: 30%; height: 3px; }
+    .bar.title { height: 10px; width: 80%; background: rgba(255,255,255,0.25); }
+    .bar.short { width: 40%; }
+
+    .wf-asym { background: #111; display: grid; grid-template-columns: 55% 45%; height: 100%; }
+    .wf-asym .img-side { background: linear-gradient(145deg, #2D5A47, #1a3a2e); }
+    .wf-asym .text-side { padding: 20px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+    .wf-asym .text-side .bar { height: 3px; background: rgba(255,255,255,0.1); }
+
+    .wf-full { background: linear-gradient(to bottom, #1a3a2e, #0d2a20); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 8px; }
+    .wf-full .bar { height: 3px; background: rgba(255,255,255,0.12); }
+
+    .wf-cards { background: #0d0d0d; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; padding: 16px; }
+    .wf-cards .card { background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; }
+    .wf-cards .card .thumb { height: 70%; background: linear-gradient(145deg, #2D5A47, #1a3a2e); }
+    .wf-cards .card .text { padding: 8px; }
+    .wf-cards .card .text .bar { height: 3px; background: rgba(255,255,255,0.1); margin-bottom: 5px; }
+
+    /* ─── Components ─── */
+    .components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .component-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 36px 28px; }
+    .component-card h4 { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #666; margin-bottom: 20px; font-weight: 500; }
+
+    .btn-primary { display: inline-block; padding: 15px 36px; background: var(--terracotta); color: white; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; font-family: 'Karla', sans-serif; border: none; cursor: pointer; }
+    .btn-outline { display: inline-block; padding: 15px 36px; background: transparent; color: var(--warm-ivory); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 600; font-family: 'Karla', sans-serif; border: 1px solid rgba(250,246,241,0.25); cursor: pointer; }
+    .btn-text { display: inline-flex; align-items: center; gap: 10px; color: var(--terracotta); font-size: 11px; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; font-family: 'Karla', sans-serif; cursor: pointer; border: none; background: none; }
+    .btn-demos { display: flex; flex-direction: column; gap: 14px; }
+
+    .nav-demo { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; border-bottom: 1px solid var(--border); }
+    .nav-demo .logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--warm-ivory); }
+    .nav-demo .links { display: flex; gap: 28px; }
+    .nav-demo .links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #777; text-decoration: none; font-weight: 400; }
+
+    /* ─── Motion ─── */
+    .motion-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .motion-card { background: rgba(255,255,255,0.02); border: 1px solid var(--border); border-radius: 10px; padding: 28px 20px; text-align: center; }
+    .motion-card .preview { height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .motion-card h5 { font-size: 13px; color: var(--warm-ivory); margin-bottom: 4px; font-weight: 500; }
+    .motion-card p { font-size: 11px; color: #555; font-weight: 300; }
+    .motion-card code { font-size: 10px; color: var(--terracotta); background: rgba(194,112,62,0.1); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-top: 6px; }
+
+    .fade-demo { width: 50px; height: 50px; border-radius: 8px; background: var(--mountain-green); animation: fadeSlide 2.5s cubic-bezier(0.16,1,0.3,1) infinite; }
+    @keyframes fadeSlide { 0%,100% { opacity:0; transform:translateY(16px); } 30%,70% { opacity:1; transform:translateY(0); } }
+    .reveal-demo { width: 80px; height: 50px; border-radius: 8px; background: var(--terracotta); animation: clipReveal 3s cubic-bezier(0.16,1,0.3,1) infinite; }
+    @keyframes clipReveal { 0%,100% { clip-path:inset(0 100% 0 0); } 30%,70% { clip-path:inset(0 0% 0 0); } }
+    .parallax-demo { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #2D5A47, #c2703e); animation: floatSlow 4s ease-in-out infinite; }
+    @keyframes floatSlow { 0%,100% { transform:translateY(8px); } 50% { transform:translateY(-8px); } }
+
+    /* ─── Versus Table ─── */
+    .versus-table { width: 100%; border-collapse: collapse; }
+    .versus-table th { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #666; font-weight: 500; padding: 10px 14px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .versus-table td { padding: 12px 14px; font-size: 13px; color: #888; border-bottom: 1px solid rgba(255,255,255,0.04); font-weight: 300; }
+    .versus-table td:first-child { color: #555; font-size: 12px; }
+    .versus-table .bad { color: #884444; }
+    .versus-table .good { color: var(--terracotta); }
+
+    /* ─── Footer ─── */
+    .moodboard-footer {
+      padding: 60px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+    .moodboard-footer p { font-size: 13px; color: #444; font-weight: 300; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <div class="moodboard-header">
+    <p class="label">Design Moodboard</p>
+    <h1>Heaven Paradise</h1>
+    <p class="subtitle">Luxury boutique hotel brand in the Himalayas. Redesign direction inspired by editorial hotel design — elegance through restraint, drama through space.</p>
+  </div>
+
+  <!-- ═══════ HERO: THE CINEMATIC SHOT ═══════ -->
+  <div class="hero-image-section">
+    <img src="../public/images/shimla/gallery-dining-silhouette.jpg" alt="Dining room silhouette against mountain panorama" />
+    <div class="overlay"></div>
+    <div class="hero-badge">Best Shot in Collection</div>
+    <div class="content">
+      <p class="tag">The Hero Image</p>
+      <h2>Dining at the Edge<br/>of the Mountains</h2>
+      <p>DSC06162 — Dark dining room, silhouetted furniture, dual windows framing a sweeping mountain panorama with golden curtains. The single most cinematic image in the collection.</p>
+    </div>
+  </div>
+
+  <!-- ═══════ 01. DESIGN DIRECTION ═══════ -->
+  <div class="section">
+    <p class="section-label">01</p>
+    <h2 class="section-title">Design Direction</h2>
+    <p class="section-desc">Three principles that shift this from "template hotel site" to luxury boutique brand.</p>
+    <div class="direction-grid">
+      <div class="direction-card">
+        <span class="icon">&#9670;</span>
+        <h3>Editorial Luxury</h3>
+        <p>Generous whitespace, serif-forward typography, restrained color. Every element earns its place. No decoration without purpose.</p>
+      </div>
+      <div class="direction-card">
+        <span class="icon">&#9671;</span>
+        <h3>Asymmetric Layouts</h3>
+        <p>Offset grids, left-aligned text against right-heavy imagery, varied section heights. Visual rhythm through deliberate imbalance.</p>
+      </div>
+      <div class="direction-card">
+        <span class="icon">&#9674;</span>
+        <h3>Cinematic Photography</h3>
+        <p>Full-bleed images, dramatic crops, moody lighting. Let the real hotel photography speak. Reduce text overlays.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 02. PHOTOGRAPHY: THE STARS ═══════ -->
+  <div class="section">
+    <p class="section-label">02</p>
+    <h2 class="section-title">Photography — The Stars</h2>
+    <p class="section-desc">Every image below is a real photo from Hotel Heaven Paradise. These are our strongest assets — the redesign should be built around them, not the other way around.</p>
+
+    <!-- Row 1: The Atmospheric Duo -->
+    <div class="image-grid asymmetric" style="margin-bottom: 16px;">
+      <div class="image-card h-400">
+        <img src="../public/images/shimla/gallery-dining-silhouette.jpg" alt="Dining silhouette" />
+        <span class="badge">Most Cinematic</span>
+        <div class="caption">
+          <h4>The Mountain Dining Room</h4>
+          <span>Dark silhouettes, golden curtains, layered peaks</span>
+        </div>
+      </div>
+      <div class="image-card h-400">
+        <img src="../public/images/shimla/mood-window-mountains.jpg" alt="Window mountains" />
+        <span class="badge">Most Atmospheric</span>
+        <div class="caption">
+          <h4>Window to the Valley</h4>
+          <span>Room silhouette framing mountain panorama</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 2: Room Showcase -->
+    <div class="image-grid cols-3" style="margin-bottom: 16px;">
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/room-valley-view.jpg" alt="Valley view room" />
+        <span class="badge">Best Room Shot</span>
+        <div class="caption">
+          <h4>Valley View Room</h4>
+          <span>Bed, seating, floor-to-ceiling mountain view</span>
+        </div>
+      </div>
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/room-bright-full.jpg" alt="Bright room" />
+        <span class="badge">Best Light</span>
+        <div class="caption">
+          <h4>Mountain Suite</h4>
+          <span>Natural daylight, sage accents, window glow</span>
+        </div>
+      </div>
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/room-mountain-suite.jpg" alt="Mountain suite bed" />
+        <span class="badge">Best Bed Detail</span>
+        <div class="caption">
+          <h4>Bed Close-Up</h4>
+          <span>Towel swans, channel headboard, warm tones</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 3: Dining + Details -->
+    <div class="image-grid" style="grid-template-columns: 1fr 2fr 1fr; margin-bottom: 16px;">
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/dining-food.jpg" alt="Breakfast parathas" />
+        <span class="badge">Best Food</span>
+        <div class="caption">
+          <h4>Breakfast</h4>
+          <span>Fresh parathas, chutneys, pickle</span>
+        </div>
+      </div>
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/dining-room.jpg" alt="Full dining room" />
+        <span class="badge">Best Dining Overview</span>
+        <div class="caption">
+          <h4>The Restaurant</h4>
+          <span>Buffet, lanterns, herringbone floor, mountain windows</span>
+        </div>
+      </div>
+      <div class="image-card h-320">
+        <img src="../public/images/shimla/dining-mountain-view.jpg" alt="Dining with view" />
+        <span class="badge">Dine with a View</span>
+        <div class="caption">
+          <h4>Mountain Dining</h4>
+          <span>Tables facing misty peaks</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Row 4: Supporting Shots -->
+    <div class="image-grid" style="grid-template-columns: 1fr 1fr 1fr 1fr;">
+      <div class="image-card h-280">
+        <img src="../public/images/shimla/gallery-hallway.jpg" alt="Hallway" />
+        <span class="badge">Architecture</span>
+        <div class="caption">
+          <h4>The Hallway</h4>
+          <span>Cove lighting, marble, walnut</span>
+        </div>
+      </div>
+      <div class="image-card h-280">
+        <img src="../public/images/shimla/gallery-room-full.jpg" alt="Full room" />
+        <span class="badge">Full Room Layout</span>
+        <div class="caption">
+          <h4>Complete Room</h4>
+          <span>Bed, chairs, natural light</span>
+        </div>
+      </div>
+      <div class="image-card h-280">
+        <img src="../public/images/shimla/room-family.jpg" alt="Family room" />
+        <span class="badge">Family Room</span>
+        <div class="caption">
+          <h4>Family Config</h4>
+          <span>King + single bed setup</span>
+        </div>
+      </div>
+      <div class="image-card h-280">
+        <img src="../public/images/shimla/dining-buffet.jpg" alt="Buffet" />
+        <span class="badge">Buffet Detail</span>
+        <div class="caption">
+          <h4>Buffet Station</h4>
+          <span>Chafing dishes, pendant lanterns</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 03. COLOR PALETTE ═══════ -->
+  <div class="section">
+    <p class="section-label">03</p>
+    <h2 class="section-title">Refined Color Palette</h2>
+    <p class="section-desc">Colors drawn from the actual hotel photography — the sage greens, warm woods, golden curtains, and moody shadows.</p>
+
+    <div class="palette-grid">
+      <div class="color-card">
+        <div class="color-swatch" style="background: #0d1a14;"></div>
+        <div class="color-info">
+          <p class="name">Deep Forest</p>
+          <p class="hex">#0d1a14</p>
+          <p class="usage">Primary backgrounds, nav, footer</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #2D5A47;"></div>
+        <div class="color-info">
+          <p class="name">Mountain Green</p>
+          <p class="hex">#2D5A47</p>
+          <p class="usage">Headings, accents, hover states</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #c2703e;"></div>
+        <div class="color-info">
+          <p class="name">Terracotta</p>
+          <p class="hex">#C2703E</p>
+          <p class="usage">CTAs, links — sparingly for impact</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #FAF6F1;"></div>
+        <div class="color-info">
+          <p class="name">Warm Ivory</p>
+          <p class="hex">#FAF6F1</p>
+          <p class="usage">Light sections, text on dark</p>
+        </div>
+      </div>
+      <div class="color-card">
+        <div class="color-swatch" style="background: #1a1a18;"></div>
+        <div class="color-info">
+          <p class="name">Charcoal</p>
+          <p class="hex">#1A1A18</p>
+          <p class="usage">Alternate dark sections, cards</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="palette-combos">
+      <div class="combo-card" style="background: #0d1a14; color: #faf6f1;">
+        <h4>Dark on Ivory</h4>
+        <p style="color: #c2703e;">Primary text pairing</p>
+      </div>
+      <div class="combo-card" style="background: #FAF6F1; color: #0d1a14;">
+        <h4 style="color: #2D5A47;">Ivory on Dark</h4>
+        <p style="color: #c2703e;">Light section pairing</p>
+      </div>
+      <div class="combo-card" style="background: #2D5A47; color: #faf6f1;">
+        <h4>Green Accent Block</h4>
+        <p style="color: rgba(250,246,241,0.5);">Feature callouts</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 04. TYPOGRAPHY ═══════ -->
+  <div class="section">
+    <p class="section-label">04</p>
+    <h2 class="section-title">Typography Scale</h2>
+    <p class="section-desc">Dramatic contrast between heading and body. The serif does the emotional work; the sans-serif stays functional.</p>
+
+    <div class="type-showcase">
+      <div class="type-block">
+        <p class="font-label">Display / Headings</p>
+        <p class="font-name">Cormorant Garamond — Light 300, Regular 400</p>
+        <div class="type-row">
+          <span class="size">72px</span>
+          <span class="sample-heading" style="font-size: 48px;">Heaven Paradise</span>
+        </div>
+        <div class="type-row">
+          <span class="size">56px</span>
+          <span class="sample-heading" style="font-size: 38px;">Your Home in Shimla</span>
+        </div>
+        <div class="type-row">
+          <span class="size">40px</span>
+          <span class="sample-heading" style="font-size: 28px;">Valley View Room</span>
+        </div>
+        <div class="type-row">
+          <span class="size">28px</span>
+          <span class="sample-heading" style="font-size: 22px;">From Our Kitchen</span>
+        </div>
+      </div>
+      <div class="type-block">
+        <p class="font-label">Body / UI</p>
+        <p class="font-name">Karla — Light 300, Regular 400, Semi 600</p>
+        <div class="type-row">
+          <span class="size">16px / 300</span>
+          <span class="sample-body" style="font-size: 16px; font-weight: 300;">Eight handpicked rooms, each with a private balcony</span>
+        </div>
+        <div class="type-row">
+          <span class="size">14px / 400</span>
+          <span class="sample-body" style="font-size: 14px;">Clean, cozy, and each with a view worth waking up for</span>
+        </div>
+        <div class="type-row">
+          <span class="size">12px / 600</span>
+          <span class="sample-body" style="font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;">Explore Shimla</span>
+        </div>
+        <div class="type-row">
+          <span class="size">11px / 500</span>
+          <span class="sample-body" style="font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: #c2703e;">Section Labels</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 05. LAYOUT PRINCIPLES ═══════ -->
+  <div class="section">
+    <p class="section-label">05</p>
+    <h2 class="section-title">Layout Principles</h2>
+    <p class="section-desc">Break the "center everything in a box" pattern. Varied layouts create editorial rhythm.</p>
+
+    <div class="layout-grid">
+      <div class="layout-card">
+        <div class="layout-visual wf-hero">
+          <div class="content">
+            <div class="bar accent"></div>
+            <div class="bar title" style="margin-bottom: 12px;"></div>
+            <div class="bar short"></div>
+          </div>
+        </div>
+        <div class="layout-info">
+          <h4>Left-Aligned Hero</h4>
+          <p>Text anchored left with breathing room. The image does the work, the text whispers.</p>
+        </div>
+      </div>
+      <div class="layout-card">
+        <div class="layout-visual wf-asym">
+          <div class="img-side"></div>
+          <div class="text-side">
+            <div class="bar accent" style="width: 25%;"></div>
+            <div class="bar" style="width: 70%;"></div>
+            <div class="bar" style="width: 85%;"></div>
+            <div class="bar" style="width: 50%;"></div>
+          </div>
+        </div>
+        <div class="layout-info">
+          <h4>Asymmetric Content</h4>
+          <p>55/45 splits. Alternate image-left and image-right. Creates editorial flow.</p>
+        </div>
+      </div>
+      <div class="layout-card">
+        <div class="layout-visual wf-full">
+          <div class="bar accent" style="width: 15%;"></div>
+          <div class="bar" style="width: 35%; height: 8px; background: rgba(255,255,255,0.2);"></div>
+          <div class="bar" style="width: 25%;"></div>
+        </div>
+        <div class="layout-info">
+          <h4>Full-Bleed Moments</h4>
+          <p>Break out of the container. Edge-to-edge images and color blocks.</p>
+        </div>
+      </div>
+      <div class="layout-card">
+        <div class="layout-visual wf-cards">
+          <div class="card"><div class="thumb"></div><div class="text"><div class="bar" style="width: 70%;"></div><div class="bar" style="width: 50%;"></div></div></div>
+          <div class="card"><div class="thumb"></div><div class="text"><div class="bar" style="width: 60%;"></div><div class="bar" style="width: 40%;"></div></div></div>
+          <div class="card"><div class="thumb"></div><div class="text"><div class="bar" style="width: 70%;"></div><div class="bar" style="width: 55%;"></div></div></div>
+        </div>
+        <div class="layout-info">
+          <h4>Varied Card Heights</h4>
+          <p>Masonry-like variety feels curated, not templated.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 06. COMPONENT PATTERNS ═══════ -->
+  <div class="section">
+    <p class="section-label">06</p>
+    <h2 class="section-title">Component Patterns</h2>
+    <p class="section-desc">Minimal, restrained UI elements that feel luxury without overdesign.</p>
+
+    <div class="components-grid">
+      <div class="component-card">
+        <h4>Navigation</h4>
+        <div class="nav-demo">
+          <span class="logo">Heaven Paradise</span>
+          <div class="links">
+            <a href="#">Shimla</a>
+            <a href="#">Manali</a>
+            <a href="#">Our Story</a>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #444; margin-top: 14px; font-weight: 300;">Minimal nav. Logo left, links right. Transparent to dark on scroll. No rounded CTA button — keep it clean.</p>
+      </div>
+      <div class="component-card">
+        <h4>Buttons &amp; CTAs</h4>
+        <div class="btn-demos">
+          <button class="btn-primary">Book Your Stay</button>
+          <button class="btn-outline">Explore Rooms</button>
+          <button class="btn-text">View Gallery <span style="font-size: 16px;">&rarr;</span></button>
+        </div>
+      </div>
+      <div class="component-card">
+        <h4>Image Card</h4>
+        <div class="image-card" style="height: 200px;">
+          <img src="../public/images/shimla/room-valley-view.jpg" alt="Room" />
+          <div class="caption">
+            <h4>Valley View Room</h4>
+            <span>Shimla &middot; Mountain facing</span>
+          </div>
+        </div>
+        <p style="font-size: 12px; color: #444; margin-top: 10px; font-weight: 300;">Rounded corners, subtle gradient. No borders, no drop shadows. Hover: slight scale.</p>
+      </div>
+      <div class="component-card">
+        <h4>Section Transitions</h4>
+        <div style="display: flex; flex-direction: column; gap: 2px;">
+          <div style="height: 40px; background: #FAF6F1; border-radius: 6px 6px 0 0;"></div>
+          <div style="height: 3px; background: linear-gradient(90deg, #c2703e, transparent);"></div>
+          <div style="height: 40px; background: #0d1a14; border-radius: 0 0 6px 6px;"></div>
+        </div>
+        <p style="font-size: 12px; color: #444; margin-top: 10px; font-weight: 300;">Dark &harr; ivory alternation. Thin accent dividers. Vary section padding — not uniform.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 07. MOTION ═══════ -->
+  <div class="section">
+    <p class="section-label">07</p>
+    <h2 class="section-title">Motion &amp; Animation</h2>
+    <p class="section-desc">Animation is a privilege, not a default. Not every element animates.</p>
+
+    <div class="motion-grid">
+      <div class="motion-card">
+        <div class="preview"><div class="fade-demo"></div></div>
+        <h5>Subtle Fade-Up</h5>
+        <p>20px travel, 0.8s. Headings and hero only.</p>
+        <code>ease-out, once</code>
+      </div>
+      <div class="motion-card">
+        <div class="preview"><div class="reveal-demo"></div></div>
+        <h5>Image Reveal</h5>
+        <p>Clip-path wipe. Used once or twice per page.</p>
+        <code>clip-path, 1.2s</code>
+      </div>
+      <div class="motion-card">
+        <div class="preview"><div class="parallax-demo"></div></div>
+        <h5>Gentle Parallax</h5>
+        <p>Background shift at 0.3x scroll. Subtle depth.</p>
+        <code>scrollY * 0.3</code>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════ 08. BEFORE / AFTER ═══════ -->
+  <div class="section">
+    <p class="section-label">08</p>
+    <h2 class="section-title">What Changes</h2>
+
+    <table class="versus-table">
+      <thead>
+        <tr>
+          <th>Element</th>
+          <th>Current (Template)</th>
+          <th>Redesign (Boutique)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Hero text</td><td class="bad">Centered, generic</td><td class="good">Left-aligned, editorial</td></tr>
+        <tr><td>Section pattern</td><td class="bad">Same label &rarr; heading &rarr; grid everywhere</td><td class="good">Varied: full-bleed, asymmetric, minimal</td></tr>
+        <tr><td>Color usage</td><td class="bad">Cream bg + grey text everywhere</td><td class="good">Dark/light alternation, accent strategically</td></tr>
+        <tr><td>Typography</td><td class="bad">Same sizes, same grey, same tracking</td><td class="good">Dramatic scale contrast, varied weights</td></tr>
+        <tr><td>Spacing</td><td class="bad">Uniform 120px on every section</td><td class="good">Varied rhythm: 0px to 200px</td></tr>
+        <tr><td>Animations</td><td class="bad">SplitHeading + ScrollReveal on everything</td><td class="good">Selective: key moments only</td></tr>
+        <tr><td>Images</td><td class="bad">All in containers with rounded corners</td><td class="good">Full-bleed + contained + cropped mix</td></tr>
+        <tr><td>Photography</td><td class="bad">Unsplash stock images</td><td class="good">Real hotel photos — the actual rooms, views, food</td></tr>
+        <tr><td>Background</td><td class="bad">Cream &rarr; White &rarr; Cream &rarr; White</td><td class="good">Dark &harr; Ivory with contrast points</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <div class="moodboard-footer">
+    <p>Heaven Paradise — Design Moodboard — Luxury Boutique Direction</p>
+  </div>
+
+</body>
+</html>

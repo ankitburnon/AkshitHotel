@@ -44,120 +44,114 @@ export const PROPERTIES: Record<PropertySlug, Property> = {
       {
         name: "Valley View Room",
         description:
-          "A cozy room with a private balcony overlooking the lush green valley. Perfect for couples seeking peace.",
-        image:
-          "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80",
-        tags: ["Valley View", "Balcony", "Heater", "Hot Water"],
+          "Open the curtains and the valley is right there — layers of green ridges dissolving into mist. This is where most guests have their morning chai, on the balcony, in silence.",
+        image: "/images/shimla/room-valley-view.jpg",
+        tags: ["Valley View", "Private Balcony", "Heater", "Hot Water"],
       },
       {
         name: "Mountain Suite",
         description:
-          "Panoramic views, sitting area, and a cozy reading corner.",
-        image:
-          "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80",
-        tags: ["Panoramic", "Suite", "Window Seat"],
+          "Our most spacious room. A sitting corner by the window where you can read, work, or just watch the clouds roll in. Couples love this one.",
+        image: "/images/shimla/room-bright-full.jpg",
+        tags: ["Panoramic View", "Sitting Area", "Window Seat"],
       },
       {
         name: "Family Room",
         description:
-          "Extra space for families with little ones. Views the kids will remember.",
-        image:
-          "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80",
-        tags: ["Family", "Extra Beds", "Spacious"],
+          "Designed for families who want to be together without feeling cramped. The kids get their own space, and you get the view.",
+        image: "/images/shimla/room-sitting-area.jpg",
+        tags: ["Family Friendly", "Extra Beds", "Spacious"],
       },
     ],
     meals: [
       {
-        image:
-          "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=200&q=80",
+        image: "/images/shimla/dining-food.jpg",
         label: "Breakfast",
       },
       {
-        image:
-          "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=200&q=80",
+        image: "/images/shimla/dining-mountain-view.jpg",
         label: "Dinner",
       },
       {
-        image:
-          "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=200&q=80",
+        image: "/images/shimla/dining-buffet.jpg",
         label: "Chai Time",
       },
     ],
-    diningTitle: "From Our Kitchen to Your Table",
+    diningTitle: "No Menu. Just Home Cooking.",
     diningText: [
-      "No buffet lines, no reheated food. Every meal is cooked fresh — just like home. Wake up to hot parathas and chai, end your day with a hearty Himachali dinner.",
-      "Our specialties include siddu, madra, babru, and the best dal you've had in the mountains.",
+      "Every meal here is cooked the way it would be at a Himachali home — fresh, unhurried, made with ingredients from the valley. Wake up to hot parathas and masala chai. End your day with a slow dinner you won't stop talking about.",
+      "Siddu, madra, babru, fresh dal — the dishes your guidebook won't mention, but the ones you'll remember longest.",
     ],
     diningSpecialties: "Himachali cuisine",
     experiences: [
       {
         name: "Mall Road",
-        subtitle: "Heritage walk through Shimla's heart",
+        subtitle: "I'll tell you where to eat, what to skip, and the shortcut nobody knows",
         image:
           "https://images.unsplash.com/photo-1597074866923-dc0589150458?w=400&q=80",
       },
       {
         name: "Jakhu Temple",
-        subtitle: "Morning hike to the hilltop",
+        subtitle: "Best at sunrise. I'll draw you the trail that avoids the tourist crowd",
         image:
           "https://images.unsplash.com/photo-1585136917228-0b1e78516072?w=400&q=80",
       },
       {
         name: "Kufri",
-        subtitle: "Snow & adventure nearby",
+        subtitle: "Snow in winter, wildflowers in spring. 45 minutes from your room",
         image:
           "https://images.unsplash.com/photo-1491002052546-bf38f186af56?w=400&q=80",
       },
       {
         name: "Toy Train",
-        subtitle: "UNESCO heritage railway",
+        subtitle: "102 tunnels, 800 bridges. Book the Shimla–Kalka run — trust me on this",
         image:
           "https://images.unsplash.com/photo-1474487548417-781cb71495f3?w=400&q=80",
       },
     ],
     galleryItems: [
       {
-        src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
-        alt: "Hotel Heaven Paradise at night",
+        src: "/images/shimla/gallery-dining-silhouette.jpg",
+        alt: "Dining room silhouette against mountain views",
       },
       {
-        src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80",
-        alt: "Mountain view from the hotel",
+        src: "/images/shimla/dining-mountain-view.jpg",
+        alt: "Dining tables facing misty mountain peaks",
       },
       {
-        src: "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=500&q=80",
-        alt: "Breakfast at the hotel",
+        src: "/images/shimla/gallery-hallway.jpg",
+        alt: "Hotel hallway with warm ambient lighting",
       },
       {
-        src: "https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=500&q=80",
-        alt: "Room interior",
+        src: "/images/shimla/dining-buffet.jpg",
+        alt: "Buffet station with pendant lanterns",
       },
       {
-        src: "https://images.unsplash.com/photo-1475483768296-6163e8f3a1c2?w=500&q=80",
-        alt: "Evening bonfire",
+        src: "/images/shimla/dining-room.jpg",
+        alt: "Restaurant with panoramic mountain views",
       },
     ],
     extras: [
       {
         image:
           "https://images.unsplash.com/photo-1475483768296-6163e8f3a1c2?w=200&q=80",
-        title: "Evening Bonfire",
+        title: "Bonfire Evenings",
         description:
-          "Gather around the fire under the stars. Perfect for families and couples on cold mountain evenings.",
+          "After dinner, we light a fire. Stories, chai, and stars — the kind of evening you can't plan but always remember.",
       },
       {
         image:
           "https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?w=200&q=80",
-        title: "Games & Books",
+        title: "Slow Evenings",
         description:
-          "Board games, cards, and a small library. Some evenings are best spent offline.",
+          "Board games, a small library, and nowhere to be. Some of our best reviews mention the evenings, not the views.",
       },
       {
         image:
           "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?w=200&q=80",
-        title: "Free Parking",
+        title: "You're Covered",
         description:
-          "Safe, on-site parking for your car. One less thing to worry about on your trip.",
+          "Free parking, hot water round the clock, room heaters in winter. The basics, done right — so you don't have to think about them.",
       },
     ],
   },
