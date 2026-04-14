@@ -60,7 +60,7 @@ export function Testimonials() {
             key={review.author}
             className="flex-none w-[85vw] md:w-auto snap-start"
           >
-            <ScrollReveal delay={i * 0.15}>
+            <ScrollReveal delay={i * 0.15} className="h-full">
               <div className="bg-white border border-primary/6 rounded-xl p-9 text-left h-full">
                 <div className="w-10 h-10 rounded-full overflow-hidden mb-4">
                   <Image
@@ -90,8 +90,6 @@ export function Testimonials() {
         <div className="mt-10">
           <a
             href="#"
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 text-sm text-[#aaa] hover:text-accent transition-colors duration-300 group"
           >
             <span className="text-highlight text-base">★★★★★</span>
