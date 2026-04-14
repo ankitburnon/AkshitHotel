@@ -72,7 +72,7 @@ export default function ManaliPage() {
         </div>
       </section>
 
-      <Rooms rooms={[...property.rooms]} />
+      <Rooms rooms={[...property.rooms]} whatsappUrl={property.whatsappUrl} />
       <Dining
         image="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80"
         imageAlt="Dining at Hotel DK Residency"

@@ -46,21 +46,21 @@ export const PROPERTIES: Record<PropertySlug, Property> = {
         description:
           "Open the curtains and the valley is right there — layers of green ridges dissolving into mist. This is where most guests have their morning chai, on the balcony, in silence.",
         image: "/images/shimla/room-valley-view.jpg",
-        tags: ["Valley View", "Private Balcony", "Heater", "Hot Water"],
+        tags: ["Valley View", "Private Balcony", "Heater", "Hot Water", "Free WiFi"],
       },
       {
         name: "Mountain Suite",
         description:
           "Our most spacious room. A sitting corner by the window where you can read, work, or just watch the clouds roll in. Couples love this one.",
         image: "/images/shimla/room-bright-full.jpg",
-        tags: ["Panoramic View", "Sitting Area", "Window Seat"],
+        tags: ["Panoramic View", "Sitting Area", "Window Seat", "Free WiFi"],
       },
       {
         name: "Family Room",
         description:
           "Designed for families who want to be together without feeling cramped. The kids get their own space, and you get the view.",
         image: "/images/shimla/room-sitting-area.jpg",
-        tags: ["Family Friendly", "Extra Beds", "Spacious"],
+        tags: ["Family Friendly", "Extra Beds", "Spacious", "Free WiFi"],
       },
     ],
     meals: [
@@ -173,7 +173,7 @@ export const PROPERTIES: Record<PropertySlug, Property> = {
           "Fall asleep to the sound of the Beas. Wake up to pine-scented air and river views from your window.",
         image:
           "https://images.unsplash.com/photo-1590490360182-c33d955e4c47?w=800&q=80",
-        tags: ["River View", "Balcony", "Heater", "Hot Water"],
+        tags: ["River View", "Balcony", "Heater", "Hot Water", "Free WiFi"],
       },
       {
         name: "Pine View Suite",
@@ -181,7 +181,7 @@ export const PROPERTIES: Record<PropertySlug, Property> = {
           "Spacious suite surrounded by deodar forest. A private balcony that feels like a treehouse.",
         image:
           "https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=600&q=80",
-        tags: ["Forest View", "Suite", "Sitting Area"],
+        tags: ["Forest View", "Suite", "Sitting Area", "Free WiFi"],
       },
       {
         name: "Family Room",
@@ -189,7 +189,7 @@ export const PROPERTIES: Record<PropertySlug, Property> = {
           "Room for the whole family with mountain views and space for the kids to play.",
         image:
           "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=600&q=80",
-        tags: ["Family", "Extra Beds", "Spacious"],
+        tags: ["Family", "Extra Beds", "Spacious", "Free WiFi"],
       },
     ],
     meals: [

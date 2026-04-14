@@ -12,10 +12,12 @@ function RoomCard({
   room,
   height,
   className = "",
+  whatsappUrl,
 }: {
   room: Room;
   height: string;
   className?: string;
+  whatsappUrl?: string;
 }) {
   return (
     <div
@@ -45,13 +47,24 @@ function RoomCard({
               </span>
             ))}
           </div>
+          {whatsappUrl && (
+            <a
+              href={`${whatsappUrl}?text=${encodeURIComponent(`Hi, I'd like to book the ${room.name}. Can you help me?`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="mt-3 inline-block text-[11px] text-accent font-semibold tracking-[1.5px] uppercase hover:text-white transition-colors duration-200"
+            >
+              Book via WhatsApp →
+            </a>
+          )}
         </div>
       </div>
     </div>
   );
 }
 
-export function Rooms({ rooms }: { rooms: Room[] }) {
+export function Rooms({ rooms, whatsappUrl }: { rooms: Room[]; whatsappUrl?: string }) {
   return (
     <section
       id="rooms"
@@ -73,12 +86,12 @@ export function Rooms({ rooms }: { rooms: Room[] }) {
 
       <div className="grid md:grid-cols-[7fr_5fr] gap-6 max-w-[1100px] mx-auto w-full">
         <ScrollReveal>
-          <RoomCard room={rooms[0]} height="h-[520px]" />
+          <RoomCard room={rooms[0]} height="h-[520px]" whatsappUrl={whatsappUrl} />
         </ScrollReveal>
         <div className="flex flex-col gap-6">
           {rooms.slice(1).map((room, i) => (
             <ScrollReveal key={room.name} delay={(i + 1) * 0.15}>
-              <RoomCard room={room} height="h-[248px]" />
+              <RoomCard room={room} height="h-[248px]" whatsappUrl={whatsappUrl} />
             </ScrollReveal>
           ))}
         </div>

@@ -66,6 +66,14 @@ export function ShimlaRooms() {
             </span>
           ))}
         </div>
+        <a
+          href={`${property.whatsappUrl}?text=${encodeURIComponent(`Hi, I'd like to book the ${rooms[0].name} at Hotel Heaven Paradise, Shimla. Can you help me?`)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-4 inline-block text-[11px] text-accent/80 font-semibold tracking-[1.5px] uppercase hover:text-accent transition-colors duration-200"
+        >
+          Book via WhatsApp →
+        </a>
       </div>
 
       {/* Rooms 2 + 3 — Side by side */}
@@ -101,6 +109,14 @@ export function ShimlaRooms() {
                 </span>
               ))}
             </div>
+            <a
+              href={`${property.whatsappUrl}?text=${encodeURIComponent(`Hi, I'd like to book the ${room.name} at Hotel Heaven Paradise, Shimla. Can you help me?`)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block text-[11px] text-accent/80 font-semibold tracking-[1.5px] uppercase hover:text-accent transition-colors duration-200"
+            >
+              Book via WhatsApp →
+            </a>
           </div>
         ))}
       </div>
