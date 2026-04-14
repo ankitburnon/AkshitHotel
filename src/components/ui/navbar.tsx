@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import { BRAND } from "@/lib/constants";
 
 interface NavLink {
@@ -19,7 +20,8 @@ export function Navbar({ links, ctaLabel = "WhatsApp Us", ctaHref = "#contact" }
 
   useEffect(() => {
     function onScroll() {
-      setScrolled(window.scrollY > 80);
+      const isScrolled = window.scrollY > 80;
+      setScrolled((prev) => (prev === isScrolled ? prev : isScrolled));
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -89,27 +91,42 @@ export function Navbar({ links, ctaLabel = "WhatsApp Us", ctaHref = "#contact" }
       </nav>
 
       {/* Mobile drawer */}
-      {mobileOpen && (
-        <div className="fixed inset-0 z-[999] bg-cream flex flex-col items-center justify-center gap-8">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="font-heading text-3xl text-primary font-light"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href={ctaHref}
-            onClick={() => setMobileOpen(false)}
-            className="mt-4 px-8 py-3 bg-primary text-white rounded-md font-semibold"
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            key="mobile-nav"
+            initial={{ opacity: 0, y: -16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -16 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-0 z-[999] bg-cream flex flex-col items-center justify-center gap-8"
           >
-            {ctaLabel}
-          </a>
-        </div>
-      )}
+            {links.map((link, i) => (
+              <motion.a
+                key={link.href}
+                href={link.href}
+                onClick={() => setMobileOpen(false)}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: 0.1 + i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+                className="font-heading text-3xl text-primary font-light"
+              >
+                {link.label}
+              </motion.a>
+            ))}
+            <motion.a
+              href={ctaHref}
+              onClick={() => setMobileOpen(false)}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.1 + links.length * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              className="mt-4 px-8 py-3 bg-primary text-white rounded-md font-semibold"
+            >
+              {ctaLabel}
+            </motion.a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
