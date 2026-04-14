@@ -85,7 +85,7 @@ export function ShimlaNavbar({
             <X className="w-6 h-6 text-body" />
           ) : (
             <Menu
-              className={`w-6 h-6 ${scrolled ? "text-body" : "text-body"}`}
+              className={`w-6 h-6 ${scrolled ? "text-body" : "text-[#1a1a18]"}`}
             />
           )}
         </button>
