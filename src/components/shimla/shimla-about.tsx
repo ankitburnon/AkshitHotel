@@ -7,7 +7,7 @@ export function ShimlaAbout() {
   return (
     <section
       id="about"
-      className="bg-cream py-[80px] md:py-[140px] px-6 md:px-[60px]"
+      className="bg-cream py-[60px] md:py-[100px] px-6 md:px-[60px]"
     >
       <div className="grid md:grid-cols-[55fr_45fr] gap-10 md:gap-20 max-w-[1200px] mx-auto items-center">
         {/* Text column */}

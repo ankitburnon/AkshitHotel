@@ -1,21 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { useLenis } from "lenis/react";
 
 export function useScrollProgress() {
   const [progress, setProgress] = useState(0);
   const [scrollY, setScrollY] = useState(0);
 
-  useEffect(() => {
-    function onScroll() {
-      const y = window.scrollY;
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      setScrollY(y);
-      setProgress(max > 0 ? y / max : 0);
-    }
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  useLenis(({ scroll, progress: p }) => {
+    setScrollY(scroll);
+    setProgress(p);
+  });
 
   return { progress, scrollY };
 }

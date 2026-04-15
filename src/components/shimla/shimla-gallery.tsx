@@ -48,7 +48,7 @@ export function ShimlaGallery() {
   return (
     <section
       id="gallery"
-      className="bg-cream py-[80px] md:py-[140px] px-6 md:px-[60px]"
+      className="bg-cream py-[80px] md:py-[100px] px-6 md:px-[60px]"
     >
       <h2 className="font-heading text-[36px] md:text-[52px] font-light text-[#1a1a18] text-center mb-10 md:mb-14">
         A Glimpse Inside

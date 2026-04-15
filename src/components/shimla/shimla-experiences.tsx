@@ -7,7 +7,7 @@ export function ShimlaExperiences() {
   return (
     <section
       id="experiences"
-      className="bg-[#0d1a14] py-[80px] md:py-[140px]"
+      className="bg-[#0d1a14] py-[80px] md:py-[120px]"
     >
       {/* Left-aligned header */}
       <div className="px-6 md:px-[60px] mb-10 md:mb-12">
@@ -24,8 +24,7 @@ export function ShimlaExperiences() {
 
       {/* Horizontal scroll strip */}
       <div
-        className="flex gap-5 md:gap-6 px-6 md:px-[60px] pb-4 overflow-x-auto [scroll-snap-type:x_mandatory] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-        data-lenis-prevent
+        className="flex gap-5 md:gap-6 px-6 md:px-[60px] pb-4 overflow-x-auto [scroll-snap-type:x_proximity] [overscroll-behavior-x:contain] [-webkit-overflow-scrolling:touch] [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {property.experiences.map((exp) => (
           <div

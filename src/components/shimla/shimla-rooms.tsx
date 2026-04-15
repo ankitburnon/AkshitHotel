@@ -18,7 +18,7 @@ export function ShimlaRooms() {
   const { open, node } = useLightbox();
 
   return (
-    <section id="rooms" className="bg-[#0d1a14] py-[80px] md:py-[160px]">
+    <section id="rooms" className="bg-[#0d1a14] py-[80px] md:py-[120px]">
       {/* Section header */}
       <div className="px-6 md:px-[60px] mb-12 md:mb-16 text-center">
         <p className="text-[11px] tracking-[4px] uppercase text-cream/35 font-semibold mb-4">

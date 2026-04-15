@@ -13,7 +13,7 @@ export function ShimlaHero() {
   return (
     <section id="hero">
       {/* Text block on cream background */}
-      <div className="bg-cream pt-[140px] md:pt-[200px] pb-10 md:pb-16 px-6 md:px-[60px]">
+      <div className="bg-cream pt-[140px] md:pt-[200px] pb-8 md:pb-12 px-6 md:px-[60px]">
         <div className="max-w-[1200px] mx-auto">
           <motion.p
             className="text-[11px] tracking-[5px] uppercase text-primary/50 font-medium mb-6 md:mb-8"

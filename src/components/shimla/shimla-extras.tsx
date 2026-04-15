@@ -6,7 +6,7 @@ export function ShimlaExtras() {
   return (
     <section
       id="extras"
-      className="bg-cream py-[60px] md:py-[100px] px-6 md:px-[60px]"
+      className="bg-cream pb-[60px] md:pb-[80px] px-6 md:px-[60px]"
     >
       <div className="max-w-[1200px] mx-auto">
         <div className="border-t border-[#1a1a18]/10 mb-10 md:mb-14" />
