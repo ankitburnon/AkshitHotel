@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { PROPERTIES, BRAND_IMAGES } from "@/lib/constants";
 import { ScrollReveal, SplitHeading } from "@/components/ui/scroll-reveal";

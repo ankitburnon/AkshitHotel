@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { BRAND_IMAGES } from "@/lib/constants";
 import { ScrollReveal } from "@/components/ui/scroll-reveal";

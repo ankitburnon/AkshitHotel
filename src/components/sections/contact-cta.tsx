@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { MessageCircle, Phone } from "lucide-react";
 import { BRAND_IMAGES } from "@/lib/constants";
